@@ -1,3 +1,6 @@
+# calculadora-posto
+Calculadora para saber quando compensa abastecer com Álcool ou com a Gasolina
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

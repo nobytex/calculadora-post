@@ -15,26 +15,26 @@ interface InfoProps{
 
 function App() {
 
-  const [gasolinaInput, setGasolinaInput] = useState(0)
-  const [alcoolInput, setAlcoolInput] = useState(0)
+  const [gasolinaInput, setGasolinaInput] = useState('')
+  const [alcoolInput, setAlcoolInput] = useState('')
   const [info, setInfo] = useState<InfoProps>()
   
   function calcular(event: FormEvent){
     event.preventDefault();
 
-    let calculo = (alcoolInput / gasolinaInput)
+    let calculo = (Number(alcoolInput) / Number(gasolinaInput))
 
     if(calculo <= 0.7){
       setInfo({
         title: "Compensar o Álcool",
-        gasolina: formatarMoeda(gasolinaInput),
-        alcool: formatarMoeda(alcoolInput),
+        gasolina: formatarMoeda(Number(gasolinaInput)),
+        alcool: formatarMoeda(Number(alcoolInput)),
       })
     }else {
       setInfo({
         title: "Compensar a Gasolina",
-        gasolina: formatarMoeda(gasolinaInput),
-        alcool: formatarMoeda(alcoolInput),
+        gasolina: formatarMoeda(Number(gasolinaInput)),
+        alcool: formatarMoeda(Number(alcoolInput)),
       })
     }
 
@@ -59,13 +59,13 @@ function App() {
           <label>Álcool (Preço por litro)</label>
           <input className='input' type='number' placeholder='4,90' 
             min='1' step='0.01' required value={alcoolInput} 
-            onChange={(e) => setAlcoolInput(Number(e.target.value))}
+            onChange={(e) => setAlcoolInput(e.target.value)}
           />
 
           <label>Gasolina (Preço por litro)</label>
           <input className='input' type='number' placeholder='6' 
           min='1' step='0.01' required value={gasolinaInput} 
-          onChange={(e) => setGasolinaInput(Number(e.target.value))}
+          onChange={(e) => setGasolinaInput(e.target.value)}
           />
 
           <input className='button' type="submit" value='Calcular' />
@@ -76,7 +76,7 @@ function App() {
           <section className='result'>
           <h2 className='result-title'>Compensa usar Álcool</h2>
 
-          <span>Álcool {info?.alcool}</span>
+          <span>Álcool  {info?.alcool}</span>
           <span>Gasolina {info?.gasolina}</span>
         </section>
         )}

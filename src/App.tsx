@@ -22,17 +22,25 @@ function App() {
   function calcular(event: FormEvent){
     event.preventDefault();
 
+    console.log(typeof(alcoolInput), '=', alcoolInput)
+    console.log(typeof(Number(alcoolInput)), '=', Number(alcoolInput))
+    console.log('=================')
+
     let calculo = (Number(alcoolInput) / Number(gasolinaInput))
+
+    console.log(calculo)
+    console.log(alcoolInput)
+    console.log(gasolinaInput)
 
     if(calculo <= 0.7){
       setInfo({
-        title: "Compensar o Álcool",
+        title: "Compensar usar Álcool",
         gasolina: formatarMoeda(Number(gasolinaInput)),
         alcool: formatarMoeda(Number(alcoolInput)),
       })
     }else {
       setInfo({
-        title: "Compensar a Gasolina",
+        title: "Compensar usar Gasolina",
         gasolina: formatarMoeda(Number(gasolinaInput)),
         alcool: formatarMoeda(Number(alcoolInput)),
       })
@@ -74,7 +82,7 @@ function App() {
 
         {info && Object.keys(info).length > 0 && (
           <section className='result'>
-          <h2 className='result-title'>Compensa usar Álcool</h2>
+          <h2 className='result-title'>{info.title}</h2>
 
           <span>Álcool  {info?.alcool}</span>
           <span>Gasolina {info?.gasolina}</span>

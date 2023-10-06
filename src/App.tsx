@@ -62,7 +62,6 @@ function App() {
         <img src={logoImg} alt='Logo da calculadora de gasolina ou alcool' />
         
         <h1 className='title'>Qual melhor opção?</h1>
-        <h2>Teste</h2>
 
         <form className='form' onSubmit={calcular}>
           <label>Álcool (Preço por litro)</label>

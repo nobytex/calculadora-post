@@ -1,5 +1,5 @@
 # calculadora-posto
-Calculadora para saber quando compensa abastecer com Álcool ou com a Gasolina
+Calculadora para saber quando compensa abastecer com Álcool ou com a Gasolina.
 
 # React + TypeScript + Vite
 
